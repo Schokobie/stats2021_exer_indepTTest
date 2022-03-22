@@ -50,7 +50,7 @@ The rio package works for importing several different types of data files. We're
 # Using the file.choose() command allows you to select a file to import from another folder.
 dataset <- rio::import(file.choose())
 # This command will allow us to import a file included in our project folder.
-# dataset <- rio::import("Album Sales.sav")
+#dataset <- rio::import("Invisibilty.sav")
 ```
 
 ## Get R code from Jamovi output
@@ -65,6 +65,24 @@ You can get the R code for most of the analyses you do in Jamovi.
 ## lm() function in R
 
 Many linear models are calculated in R using the lm() function. We'll look at how to perform a regression using the lm() function since it's so common.
+```{r}
+jmv::ttestIS(
+    formula = Mischief ~ Cloak,
+    data = dataset,
+    vars = Mischief,
+    bf = TRUE,
+    welchs = TRUE,
+    mann = TRUE,
+    norm = TRUE,
+    qq = TRUE,
+    eqv = TRUE,
+    meanDiff = TRUE,
+    ci = TRUE,
+    effectSize = TRUE,
+    ciES = TRUE,
+    desc = TRUE,
+    plots = TRUE)
+```
 
 #### Visualization
 
